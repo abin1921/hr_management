@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>HR Management</title>
+    <meta
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+      name="viewport"
+    />
+    <link
+      rel="icon"
+      href="static/assets/img/kaiadmin/favicon.ico"
+      type="image/x-icon"
+    />
+
+    <!-- Fonts and icons -->
+    <script src="static/assets/js/plugin/webfont/webfont.min.js"></script>
+    <script>
+      WebFont.load({
+        google: { families: ["Public Sans:300,400,500,600,700"] },
+        custom: {
+          families: [
+            "Font Awesome 5 Solid",
+            "Font Awesome 5 Regular",
+            "Font Awesome 5 Brands",
+            "simple-line-icons",
+          ],
+          urls: ["static/assets/css/fonts.min.css"],
+        },
+        active: function () {
+          sessionStorage.fonts = true;
+        },
+      });
+    </script>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="static/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/assets/css/plugins.min.css" />
+    <link rel="stylesheet" href="static/assets/css/kaiadmin.min.css" />
+
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link rel="stylesheet" href="static/assets/css/demo.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- Sidebar -->
+      <div class="sidebar" data-background-color="dark">
+        <div class="sidebar-logo">
+          <!-- Logo Header -->
+          <div class="logo-header" data-background-color="dark">
+            <a href="adminindex" class="logo">
+              <img
+                src="static/assets/img/logo_light.png"
+                alt="navbar brand"
+                class="navbar-brand"
+                height="25">
+            </a>
+            <div class="nav-toggle">
+              <button class="btn btn-toggle toggle-sidebar">
+                <i class="gg-menu-right"></i>
+              </button>
+              <button class="btn btn-toggle sidenav-toggler">
+                <i class="gg-menu-left"></i>
+              </button>
+            </div>
+            <button class="topbar-toggler more">
+              <i class="gg-more-vertical-alt"></i>
+            </button>
+          </div>
+          <!-- End Logo Header -->
+        </div>
+        <div class="sidebar-wrapper scrollbar scrollbar-inner">
+          <div class="sidebar-content">
+            <ul class="nav nav-secondary">
+              <li class="nav-item active">
+                <a  href="/index"
+                  class="collapsed">
+                  <i class="fas fa-home"></i>
+                  <p>Dashboard</p>
+                </a>
+              </li>
+              <li class="nav-section">
+                <span class="sidebar-mini-icon">
+                  <i class="fa fa-ellipsis-h"></i>
+                </span>
+                <h4 class="text-section">Components</h4>
+              </li>
+              
+              <li class="nav-item">
+                <a data-bs-toggle="collapse" href="#sidebarLayouts">
+                  <i class="fas fa-users"></i>
+                  <p>Employees</p>
+                  <span class="caret"></span>
+                </a>
+                <div class="collapse" id="sidebarLayouts">
+                  <ul class="nav nav-collapse">
+                    <li>
+                      <a href="aempview">
+                        <span class="sub-item">View Employees</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="aempreg">
+                        <span class="sub-item">Add Employee</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="empleaveview">
+                        <span class="sub-item">Employee Leaves</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a data-bs-toggle="collapse" href="#forms">
+                  <i class="fas fa-atlas"></i>
+                  <p>Leaves</p>
+                  <span class="caret"></span>
+                </a>
+                <div class="collapse" id="forms">
+                  <ul class="nav nav-collapse">
+                    <li>
+                      <a href="admleavereg">
+                        <span class="sub-item">Apply Leaves</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="aadmleaveview">
+                        <span class="sub-item">View Leaves</span>
+                      </a>
+                    </li>
+                    
+                  </ul>
+                </div>
+              </li>
+              
+              <li class="nav-item">
+                <a data-bs-toggle="collapse" href="#charts">
+                  <i class="far fa-chart-bar"></i>
+                  <p>Projects</p>
+                  <span class="caret"></span>
+                </a>
+                <div class="collapse" id="charts">
+                  <ul class="nav nav-collapse">
+                    <li>
+                      <a href="aprojectview">
+                        <span class="sub-item">View Projects</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="aprojectreg">
+                        <span class="sub-item">New Project</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              <li class="nav-item">
+                <a data-bs-toggle="collapse" href="#submenu">
+                  <i class="fas fa-medal"></i>
+                  <p>Careers</p>
+                  <span class="caret"></span>
+                </a>
+                <div class="collapse" id="submenu">
+                  <ul class="nav nav-collapse">
+                    <li>
+                      <a href="acourseview">
+                        <span class="sub-item">Courses</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="atrainingview">
+                        <span class="sub-item">Trainings</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a data-bs-toggle="collapse" href="#base">
+                  <i class="fab fa-weixin"></i>
+                  <p>Notifications</p>
+                  <span class="caret"></span>
+                </a>
+                <div class="collapse" id="base">
+                  <ul class="nav nav-collapse">
+                    <li>
+                      <a href="notview">
+                        <span class="sub-item">From Admin</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="empnotview">
+                        <span class="sub-item">From Employee</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="hrnotreg">
+                        <span class="sub-item">To Employee</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a href="logoutuser">
+                  <i class="far fa-arrow-alt-circle-left"></i>
+                  <p>Logout</p>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- End Sidebar -->
+      <div class="main-panel">
+        <div class="page-inner">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="card">
+                  <div class="card-header">
+                    <div class="card-title" style="text-align: center;">Notification to Employee</div>
+                  </div>
+                  <form action="" id="department-form" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div style="padding:0px 20px;">
+                      <div class="form-group">
+                          <label for="largeInput">Title</label>
+                          <input type="text" name="title" class="form-control form-control" id="defaultInput"
+                          placeholder="Enter Notification Title" required>
+                      </div>
+                    </div>
+                    <div style="padding:0px 20px;">
+                      <div class="form-group">
+                          <label for="description">Message</label>
+                          <textarea rows="5" name="message" id="description" class="form-control form-control" placeholder="Enter the Message" required></textarea>
+                      </div>
+                    </div>
+                    <div class="card-action">
+                      <button class="btn btn-success" type="submit">Send</button>
+                      <button class="btn btn-danger" type="reset">Cancel</button>
+                    </div>
+        
+                  </form>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+
+      
+    </div>
+    <!--   Core JS Files   -->
+    <script src="static/assets/js/core/jquery-3.7.1.min.js"></script>
+    <script src="static/assets/js/core/popper.min.js"></script>
+    <script src="static/assets/js/core/bootstrap.min.js"></script>
+
+    <!-- jQuery Scrollbar -->
+    <script src="static/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+
+    <!-- Chart JS -->
+    <script src="static/assets/js/plugin/chart.js/chart.min.js"></script>
+
+    <!-- jQuery Sparkline -->
+    <script src="static/assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
+
+    <!-- Chart Circle -->
+    <script src="static/assets/js/plugin/chart-circle/circles.min.js"></script>
+
+    <!-- Datatables -->
+    <script src="static/assets/js/plugin/datatables/datatables.min.js"></script>
+
+    <!-- Bootstrap Notify -->
+    {% comment %} <script src="static/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script> {% endcomment %}
+
+    <!-- jQuery Vector Maps -->
+    <script src="static/assets/js/plugin/jsvectormap/jsvectormap.min.js"></script>
+    <script src="static/assets/js/plugin/jsvectormap/world.js"></script>
+
+    <!-- Sweet Alert -->
+    <script src="static/assets/js/plugin/sweetalert/sweetalert.min.js"></script>
+
+    <!-- Kaiadmin JS -->
+    <script src="static/assets/js/kaiadmin.min.js"></script>
+
+    <!-- Kaiadmin DEMO methods, don't include it in your project! -->
+    <script src="static/assets/js/setting-demo.js"></script>
+    <script src="static/assets/js/demo.js"></script>
+
+  </body>
+</html>

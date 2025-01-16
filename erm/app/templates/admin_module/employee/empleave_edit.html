@@ -1,0 +1,343 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>HR Management</title>
+    <meta
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+      name="viewport"
+    />
+    <link
+      rel="icon"
+      href="{% static 'assets/img/favicon.png' %}"
+      type="image/x-icon"
+    />
+
+    <!-- Fonts and icons -->
+    <script src="{% static 'assets/js/plugin/webfont/webfont.min.js' %}"></script>
+    <script>
+      WebFont.load({
+        google: { families: ["Public Sans:300,400,500,600,700"] },
+        custom: {
+          families: [
+            "Font Awesome 5 Solid",
+            "Font Awesome 5 Regular",
+            "Font Awesome 5 Brands",
+            "simple-line-icons",
+          ],
+          urls: ["{% static 'assets/css/fonts.min.css' %}"],
+        },
+        active: function () {
+          sessionStorage.fonts = true;
+        },
+      });
+    </script>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/plugins.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/kaiadmin.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/demo.css' %}" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- Sidebar -->
+      <div class="sidebar" data-background-color="dark">
+        <div class="sidebar-logo">
+          <!-- Logo Header -->
+          <div class="logo-header" data-background-color="dark">
+            <a href="adminindex" class="logo">
+              <img
+                src="{% static 'assets/img/logo_light.png' %}"
+                alt="navbar brand"
+                class="navbar-brand"
+                height="25">
+            </a>
+            <div class="nav-toggle">
+              <button class="btn btn-toggle toggle-sidebar">
+                <i class="gg-menu-right"></i>
+              </button>
+              <button class="btn btn-toggle sidenav-toggler">
+                <i class="gg-menu-left"></i>
+              </button>
+            </div>
+            <button class="topbar-toggler more">
+              <i class="gg-more-vertical-alt"></i>
+            </button>
+          </div>
+          <!-- End Logo Header -->
+        </div>
+        <div class="sidebar-wrapper scrollbar scrollbar-inner">
+          <div class="sidebar-content">
+            <ul class="nav nav-secondary">
+              <li class="nav-item active">
+                <a  href="/adminindex"
+                  class="collapsed">
+                  <i class="fas fa-home"></i>
+                  <p>Dashboard</p>
+                </a>
+              </li>
+              <li class="nav-section">
+                <span class="sidebar-mini-icon">
+                  <i class="fa fa-ellipsis-h"></i>
+                </span>
+                <h4 class="text-section">Components</h4>
+              </li>
+              
+              <li class="nav-item">
+                <a data-bs-toggle="collapse" href="#sidebarLayouts">
+                  <i class="fas fa-users"></i>
+                  <p>Employees</p>
+                  <span class="caret"></span>
+                </a>
+                <div class="collapse" id="sidebarLayouts">
+                  <ul class="nav nav-collapse">
+                    <li>
+                      <a href="/aempview">
+                        <span class="sub-item">View Employees</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/aempreg">
+                        <span class="sub-item">Add Employee</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/empleaveview">
+                        <span class="sub-item">Employee Leaves</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a data-bs-toggle="collapse" href="#forms">
+                  <i class="fas fa-atlas"></i>
+                  <p>Leaves</p>
+                  <span class="caret"></span>
+                </a>
+                <div class="collapse" id="forms">
+                  <ul class="nav nav-collapse">
+                    <li>
+                      <a href="/admleavereg">
+                        <span class="sub-item">Apply Leaves</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/aadmleaveview">
+                        <span class="sub-item">View Leaves</span>
+                      </a>
+                    </li>
+                    
+                  </ul>
+                </div>
+              </li>
+              
+              <li class="nav-item">
+                <a data-bs-toggle="collapse" href="#charts">
+                  <i class="far fa-chart-bar"></i>
+                  <p>Projects</p>
+                  <span class="caret"></span>
+                </a>
+                <div class="collapse" id="charts">
+                  <ul class="nav nav-collapse">
+                    <li>
+                      <a href="/aprojectview">
+                        <span class="sub-item">View Projects</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/aprojectreg">
+                        <span class="sub-item">New Project</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              <li class="nav-item">
+                <a data-bs-toggle="collapse" href="#submenu">
+                  <i class="fas fa-medal"></i>
+                  <p>Careers</p>
+                  <span class="caret"></span>
+                </a>
+                <div class="collapse" id="submenu">
+                  <ul class="nav nav-collapse">
+                    <li>
+                      <a href="/acourseview">
+                        <span class="sub-item">Courses</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/atrainingview">
+                        <span class="sub-item">Trainings</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a data-bs-toggle="collapse" href="#base">
+                  <i class="fab fa-weixin"></i>
+                  <p>Notifications</p>
+                  <span class="caret"></span>
+                </a>
+                <div class="collapse" id="base">
+                  <ul class="nav nav-collapse">
+                    <li>
+                      <a href="/notview">
+                        <span class="sub-item">From Admin</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/empnotview">
+                        <span class="sub-item">From Employee</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/hrnotreg">
+                        <span class="sub-item">To Employee</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a href="/logoutuser">
+                  <i class="far fa-arrow-alt-circle-left"></i>
+                  <p>Logout</p>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- End Sidebar -->
+      <div class="main-panel">
+        <div class="page-inner">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="card">
+                  <div class="card-header">
+                    <div class="card-title" style="text-align: center;">Review Employees Leave</div>
+                  </div>
+                  <form class="row" action="{% url 'empleaveupdate' data.id %}" id="department-form" method="post" enctype="multipart/form-data">
+                      {% csrf_token %}
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col-md-6">
+                              <div style="padding:0px 20px;">
+                                  <div class="form-group">
+                                    <label for="defaultSelect">Employee Name</label>
+                                    <select name="employee"
+                                      class="form-select form-control"
+                                      id="defaultSelect" required>
+                                    
+                                      <option value="{{ data.id }}">{{ data.emp_id }} </option>
+                                   
+                                    </select>
+                                  </div>
+                              </div>
+                              <div style="padding:0px 20px;">
+                                  <div class="form-group">
+                                    <label for="defaultSelect">Leave Type</label>
+                                    <select name="leave"
+                                      class="form-select form-control"
+                                      id="defaultSelect" required>
+                                      
+                                      <option >{{ data.leavetype_id }}</option>
+                                      
+                                    </select>
+                                  </div>
+                              </div>
+                              <div style="padding:0px 20px;">
+                                  <div class="form-group">
+                                      <label for="largeInput">From Date</label>
+                                      <input type="date" name="fdate" class="form-control form-control" id="defaultInput" value="{{ data.from_date|date:'Y-m-d' }}" required>
+                                  </div>
+                              </div>
+                              <div style="padding:0px 20px;">
+                                  <div class="form-group">
+                                      <label for="largeInput">To Date</label>
+                                      <input type="date" name="tdate" class="form-control form-control" value="{{ data.to_date|date:'Y-m-d' }}" id="defaultInput" required>
+                                  </div>
+                              </div>
+                          </div>
+                          
+                          <div class="col-md-6">
+                              <div style="padding:0px 20px;">
+                                  <div class="form-group">
+                                      <label for="largeInput">Total Days</label>
+                                      <input type="number" name="days" class="form-control form-control" value="{{ data.days_no }}" id="defaultInput" placeholder="Enter Reason" required>
+                                  </div>
+                              </div>
+                              <div style="padding:0px 20px;">
+                                  <div class="form-group">
+                                      <label for="largeInput">Reason</label>
+                                      <input type="textarea" name="reason" value="{{ data.reason }}" class="form-control form-control" id="defaultInput"
+                                      placeholder="Enter Reason">
+                                  </div>
+                              </div>
+                              <div style="padding:0px 20px;">
+                                <div class="form-group">
+                                  <label for="defaultSelect">Status</label>
+                                  <select name="status"
+                                    class="form-select form-control"
+                                    id="defaultSelect" required>
+                                    <option value="1">Approved</option>
+                                    <option value="2">Rejected</option>
+                                  </select>
+                                </div>
+                              </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card-action">
+                        <button class="btn btn-success">Submit</button>
+                        <button class="btn btn-danger">Cancel</button>
+                      </div>
+                    </form>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+
+      
+    </div>
+    <!--   Core JS Files   -->
+    <script src="{% static 'assets/js/core/jquery-3.7.1.min.js' %}"></script>
+    <script src="{% static 'assets/js/core/popper.min.js' %}"></script>
+    <script src="{% static 'assets/js/core/bootstrap.min.js' %}"></script>
+
+
+    <!-- jQuery Scrollbar -->
+    <script src="{% static 'assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js' %}"></script>
+
+    <!-- Chart JS -->
+    <script src="{% static 'assets/js/plugin/chart.js/chart.min.js' %}"></script>
+
+    <!-- jQuery Sparkline -->
+    <script src="{% static 'assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js' %}"></script>
+
+    <!-- Chart Circle -->
+    <script src="{% static 'assets/js/plugin/chart-circle/circles.min.js' %}"></script>
+
+    <!-- Datatables -->
+    <script src="{% static 'assets/js/plugin/datatables/datatables.min.js' %}"></script>
+
+    <!-- jQuery Vector Maps -->
+    <script src="{% static 'assets/js/plugin/jsvectormap/jsvectormap.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugin/jsvectormap/world.js' %}"></script>
+
+    <!-- Sweet Alert -->
+    <script src="{% static 'assets/js/plugin/sweetalert/sweetalert.min.js' %}"></script>
+
+    <!-- Kaiadmin JS -->
+    <script src="{% static 'assets/js/kaiadmin.min.js' %}"></script>
+
+    <!-- Kaiadmin DEMO methods, don't include it in your project! -->
+    <script src="{% static 'assets/js/setting-demo.js' %}"></script>
+    <script src="{% static 'assets/js/demo.js' %}"></script>
+
+  </body>
+</html>

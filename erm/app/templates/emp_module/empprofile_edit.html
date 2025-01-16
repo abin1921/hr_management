@@ -1,0 +1,310 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Admin Management</title>
+    <meta
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+      name="viewport"
+    />
+    <link
+      rel="icon"
+      href="{% static 'assets/img/favicon.png' %}"
+      type="image/x-icon"
+    />
+
+    <!-- Fonts and icons -->
+    <script src="{% static 'assets/js/plugin/webfont/webfont.min.js' %}"></script>
+    <script>
+      WebFont.load({
+        google: { families: ["Public Sans:300,400,500,600,700"] },
+        custom: {
+          families: [
+            "Font Awesome 5 Solid",
+            "Font Awesome 5 Regular",
+            "Font Awesome 5 Brands",
+            "simple-line-icons",
+          ],
+          urls: ["{% static 'assets/css/fonts.min.css' %}"],
+        },
+        active: function () {
+          sessionStorage.fonts = true;
+        },
+      });
+    </script>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/plugins.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/kaiadmin.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/demo.css' %}" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- Sidebar -->
+      <div class="sidebar" data-background-color="dark">
+        <div class="sidebar-logo">
+          <!-- Logo Header -->
+          <div class="logo-header" data-background-color="dark">
+            <a href="empindex" class="logo">
+              <img
+                src="{% static 'assets/img/logo_light.png' %}"
+                alt="navbar brand"
+                class="navbar-brand"
+                height="25">
+            </a>
+            <div class="nav-toggle">
+              <button class="btn btn-toggle toggle-sidebar">
+                <i class="gg-menu-right"></i>
+              </button>
+              <button class="btn btn-toggle sidenav-toggler">
+                <i class="gg-menu-left"></i>
+              </button>
+            </div>
+            <button class="topbar-toggler more">
+              <i class="gg-more-vertical-alt"></i>
+            </button>
+          </div>
+          <!-- End Logo Header -->
+        </div>
+        <div class="sidebar-wrapper scrollbar scrollbar-inner">
+          <div class="sidebar-content">
+            <ul class="nav nav-secondary">
+              <li class="nav-item active">
+                <a
+                href="/empindex"
+                >
+                  <i class="fas fa-home"></i>
+                  <p>Dashboard</p>
+                </a>
+              </li>
+              <li class="nav-section">
+                <span class="sidebar-mini-icon">
+                  <i class="fa fa-ellipsis-h"></i>
+                </span>
+                <h4 class="text-section">Components</h4>
+              </li>
+              
+              <li class="nav-item">
+                <a data-bs-toggle="collapse" href="#sidebarLayouts">
+                  <i class="fas fa-user-check"></i>
+                  <p>Profile</p>
+                  <span class="caret"></span>
+                </a>
+                <div class="collapse" id="sidebarLayouts">
+                  <ul class="nav nav-collapse">
+                    <li>
+                      <a href="/empprofile">
+                        <span class="sub-item">My Profile</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="{% url 'empprofileedit' user.id %}">
+                        <span class="sub-item">Edit Profile</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a data-bs-toggle="collapse" href="#forms">
+                  <i class="fas fa-calendar-times"></i>
+                  <p>Leaves</p>
+                  <span class="caret"></span>
+                </a>
+                <div class="collapse" id="forms">
+                  <ul class="nav nav-collapse">
+                    <li>
+                      <a href="/empleavereg">
+                        <span class="sub-item">Apply Leave</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/eempleaveview">
+                        <span class="sub-item">View Leave</span>
+                      </a>
+                    </li>
+
+                  </ul>
+                </div>
+              </li>
+              
+              <li class="nav-item">
+                <a data-bs-toggle="collapse" href="#base">
+                  <i class="fab fa-weixin"></i>
+                  <p>Messages</p>
+                  <span class="caret"></span>
+                </a>
+                <div class="collapse" id="base">
+                  <ul class="nav nav-collapse">
+                    <li>
+                      <a href="/hrnotview">
+                        <span class="sub-item">From HR</span>
+                      </a>
+                    </li>
+                    <li>
+                        <a href="/empnotreg">
+                          <span class="sub-item">To HR</span>
+                        </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a href="/logoutuser">
+                  <i class="far fa-arrow-alt-circle-left"></i>
+                  <p>Logout</p>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- End Sidebar -->
+     <div class="main-panel">
+      <!-- <div class="container">  -->
+          <div class="page-inner">
+            <div class="page-header">
+              <h3 class="fw-bold mb-3">Edit Profile</h3>
+              <ul class="breadcrumbs mb-3">
+                <li class="nav-home">
+                  <a href="/empindex">
+                    <i class="icon-home"></i>
+                  </a>
+                </li>
+                <li class="separator">
+                  <i class="icon-arrow-right"></i>
+                </li>
+                <li class="nav-item">
+                  <a>Profile</a>
+                </li>
+                <li class="separator">
+                  <i class="icon-arrow-right"></i>
+                </li>
+                <li class="nav-item">
+                  <a >Edit My Profile</a>
+                </li>
+              </ul>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="card">
+                  <div class="card-header">
+                    <div class="card-title" style="text-align: center;">Edit My Profile</div>
+                  </div>
+                  <form action="{% url 'empprofileupdate' data.id %}" class="row" id="department-form" method="post" enctype="multipart/form-data">
+                      {% csrf_token %}
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col-md-12">
+                              
+                              
+                              <div style="padding:0px 20px;">
+                                  <div class="form-group">
+                                      <label for="largeInput">First Name</label>
+                                      <input type="text" name="fname" class="form-control form-control" id="defaultInput"
+                                      placeholder="Enter First Name" value="{{ data.firstname }}" required>
+                                  </div>
+                              </div>
+                              <div style="padding:0px 20px;">
+                                  <div class="form-group">
+                                      <label for="largeInput">Last Name</label>
+                                      <input type="text" name="lname" class="form-control form-control" id="defaultInput"
+                                      placeholder="Enter Last Name" value="{{ data.lastname }}" required>
+                                  </div>
+                              </div>
+                            
+                            
+                              <div class="form-group" style="padding:15px 33px 5px 33px;">
+                                  <label>Gender</label><br />
+                                  <select name="gender"
+                                      class="form-select form-control"
+                                      id="defaultSelect" selected required>                                   
+                                      <option value="1">Male</option>                                 
+                                      <option value="0">Female</option>
+                                  </select>
+                              </div>
+                              <div style="padding:0px 20px;">
+                                  <div class="form-group">
+                                      <label for="largeInput">Date Of Birth</label>
+                                      <input type="date" name="dob" class="form-control form-control" id="defaultInput" value="{{ data.dob|date:'Y-m-d' }}"selected required>
+                                  </div>
+                              </div>
+                              <div style="padding:0px 20px;">
+                                  <div class="form-group">
+                                      <label for="address">Address</label>
+                                      <textarea class="form-control" name="address" id="comment" placeholder="Enter Address" required>{{ data.address }}</textarea>
+                                  </div>
+                              </div>
+                              <div style="padding:0px 20px;">
+                                <div class="form-group">
+                                    <label for="largeInput">Email ID</label>
+                                    <input type="email" name="email" class="form-control form-control" id="defaultInput"
+                                    placeholder="Enter Email ID" value="{{ data.email }}" required>
+                                </div>
+                              </div>
+                              <div style="padding:0px 20px;">
+                                <div class="form-group">
+                                    <label for="largeInput">Contact Number</label>
+                                    <input type="number" name="contact" class="form-control form-control" id="defaultInput"
+                                    placeholder="Enter Contact Number" value="{{ data.contact }}" required>
+                                </div>
+                              </div>                             
+                          </div>
+                    
+                        </div>
+                      </div>
+                      <div class="card-action">
+                        <button class="btn btn-success">Submit</button>
+                        <button class="btn btn-danger">Cancel</button>
+                      </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <!-- </div> -->
+    </div>
+      
+    
+    <!--   Core JS Files   -->
+        <!--   Core JS Files   -->
+        <script src="{% static 'assets/js/core/jquery-3.7.1.min.js' %}"></script>
+        <script src="{% static 'assets/js/core/popper.min.js' %}"></script>
+        <script src="{% static 'assets/js/core/bootstrap.min.js' %}"></script>
+    
+    
+        <!-- jQuery Scrollbar -->
+        <script src="{% static 'assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js' %}"></script>
+    
+        <!-- Chart JS -->
+        <script src="{% static 'assets/js/plugin/chart.js/chart.min.js' %}"></script>
+    
+        <!-- jQuery Sparkline -->
+        <script src="{% static 'assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js' %}"></script>
+    
+        <!-- Chart Circle -->
+        <script src="{% static 'assets/js/plugin/chart-circle/circles.min.js' %}"></script>
+    
+        <!-- Datatables -->
+        <script src="{% static 'assets/js/plugin/datatables/datatables.min.js' %}"></script>
+    
+        <!-- jQuery Vector Maps -->
+        <script src="{% static 'assets/js/plugin/jsvectormap/jsvectormap.min.js' %}"></script>
+        <script src="{% static 'assets/js/plugin/jsvectormap/world.js' %}"></script>
+    
+        <!-- Sweet Alert -->
+        <script src="{% static 'assets/js/plugin/sweetalert/sweetalert.min.js' %}"></script>
+    
+        <!-- Kaiadmin JS -->
+        <script src="{% static 'assets/js/kaiadmin.min.js' %}"></script>
+    
+        <!-- Kaiadmin DEMO methods, don't include it in your project! -->
+        <script src="{% static 'assets/js/setting-demo.js' %}"></script>
+        <script src="{% static 'assets/js/demo.js' %}"></script>
+
+  </body>
+</html>
